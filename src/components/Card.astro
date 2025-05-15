@@ -1,0 +1,31 @@
+---
+import axios from 'axios'
+
+// Server-side fetch — Astro дээр build/render үед ажиллана
+let projects = []
+
+try {
+  const response = await axios.get('http://localhost:8080/project')
+  projects = response.data
+} catch (error) {
+  console.error('Failed to fetch projects:', error)
+}
+---
+
+<div id="project-card" class="mt-8">
+  <h2 class="text-xl font-bold text-green-800 mb-4">projects</h2>
+
+  {projects.length > 0 ? (
+    <ul class="space-y-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {projects.map((project: { name: string; description: string; photo: string ; link: string  }) => (
+       <a href={project.link}> <li class="bg-white border border-gray-300 rounded-lg p-4 hover:scale-105 transition-transform duration-300 shadow-md">
+          <img src={project.photo} alt="Project Image" class="w-full h-32 object-cover border border-gray-100  rounded-t-lg mb-4" />
+          <div class="text-lg font-semibold text-gray-700">{project.name}</div>
+          <div class="text-sm text-gray-500">{project.description}</div>
+        </li></a>
+      ))}
+    </ul>
+  ) : (
+    <p class="text-red-500">No users found or failed to load.</p>
+  )}
+</div>

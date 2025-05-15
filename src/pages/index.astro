@@ -1,47 +1,44 @@
 ---
-import Header from '../components/Header.astro';
-import Nav from '../components/Nav.astro';
-import Layout from '../layouts/Layout.astro';
+import Header from "../components/Header.astro";
+import Nav from "../components/Nav.astro";
+import Card from "../components/Card.astro";
+import Contact from "./contact.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Astro Basics</title>
+    </head>
 
-	
-<body class="bg-linear-to-t  from-pink-50 to-pink min-h-screen flex   justify-center"> 
-	<div class="w-10/12 max-w-5xl  bg-white backdrop-blur-lg  shadow-lg rounded-2xl p-6 flex px-10"> 
-		 <Nav />
-		 <main class="w-3/4 p-6" > 
-			<Header />
-			
-     <!-- Contact Section -->
-     <section  class="mt-12  ">
-      <h2 class="text-2xl font-semibold text-gray-800">Contact Me</h2>
-      <p class="text-gray-600 mt-2">Feel free to reach out for collaborations or inquiries.</p>
-  
-      <div class="mt-6 flex justify-center space-x-6">
-          <a href="#" class="text-gray-700 hover:text-blue-500 text-2xl"><i class="fab fa-facebook"></i></a>
-          <a href="#" class="text-gray-700 hover:text-pink-500 text-2xl"><i class="fab fa-instagram"></i></a>
-          <a href="mailto:your.email@example.com" class="text-gray-700 hover:text-red-500 text-2xl"><i class="fas fa-envelope"></i></a>
-          <a href="tel:+1234567890" class="text-gray-700 hover:text-green-500 text-2xl"><i class="fas fa-phone"></i></a>
-      </div>
-  </section>
-        </main>
-    </div>
+    <body
+        class="bg-linear-to-t from-pink-100 to-pink min-h-screen flex justify-center "
+    >
+        <div
+            class="w-10/12 max-w-5xl bg-white backdrop-blur-lg shadow-lg rounded-2xl p-6 flex px-5"
+        >
+            <Nav />
+            <main class="w-3/4 p-6">
+                <Header />
+                <p class="text-gray-700 text-sm/6 mt-4">
+                    Hello! I'm <strong>Ichko</strong>, a passionate web
+                    developer based in Khovd, Mongolia. I specialize in
+                    building responsive and accessible web applications with
+                    modern technologies.
+                </p>
 
+                <Card />
 
-   
-  
-</body>
+                <!-- Contact Section -->
+                    <Contact />
+            </main>
+        </div>
+    </body>
 </html>
-
-</Layout>
